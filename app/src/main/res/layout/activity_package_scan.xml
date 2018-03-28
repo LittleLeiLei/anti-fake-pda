@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cellLabel="@string/text_package_info"
+                app:showDivider="true" />
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:id="@+id/cv_cell_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cellLabel="@string/text_package_product_name"
+                app:showDivider="true" />
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:id="@+id/cv_cell_item_batch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cellLabel="@string/text_package_product_batch"
+                app:showDivider="true" />
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:id="@+id/cv_cell_batch_scale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cellLabel="@string/text_package_product_scale" />
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:id="@+id/cv_cell_box_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                app:cellLabel="@string/text_box_code"
+                app:showArrow="true"
+                app:showDivider="true" />
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:id="@+id/cv_cell_item_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cellLabel="@string/text_item_code"
+                app:showArrow="true"
+                app:showDivider="true" />
+
+            <com.chuxin.wechat.fake.views.ui.CellView
+                android:id="@+id/cv_cell_package_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cellLabel="@string/text_package_completion" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_huge"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_complete"
+                    style="@style/PrimaryButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="完成本次装箱" />
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_continue"-->
+                    <!--style="@style/PrimaryButton"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="@dimen/margin_large"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="继续装箱" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

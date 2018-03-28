@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbar_height"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:padding="15dp"
+        android:src="@mipmap/ic_arrow_back"
+        android:tint="@color/toolbar_icon_color" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="@dimen/toolbar_title_size" />
+
+    <TextView
+        android:id="@+id/tv_toolbar_secondary_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/margin_middle"
+        android:paddingRight="@dimen/margin_middle"
+        android:textColor="@color/toolbar_text_color"
+        android:gravity="center"
+        android:textSize="@dimen/toolbar_secondary_button_text_size" />
+
+</RelativeLayout>

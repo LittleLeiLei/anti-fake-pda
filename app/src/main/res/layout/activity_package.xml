@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        app:cellLabel="@string/text_package_product_name"
+        app:cellValue="@string/text_cell_placeholder"
+        app:showArrow="true"
+        app:showDivider="true" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_item_batch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_cell_product"
+        app:cellLabel="@string/text_package_product_batch"
+        app:cellValue="请选择"
+        app:showArrow="true"
+        app:showDivider="true" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_scale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_cell_item_batch"
+        app:cellLabel="@string/text_package_product_scale"
+        app:showArrow="false"
+        app:showDivider="false" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_huge"
+        android:background="@drawable/selector_primary_button"
+        android:text="@string/text_confirm"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/include_toolbar" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_box_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:showDivider="true"
+        app:cellLabel="@string/text_box_code"
+        app:cellValue="@string/text_scan_box_code_first"/>
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_item_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLabel="@string/text_item_code"
+        app:cellValue="暂未录入单码信息"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_item_code"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_append"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_rectangle_primary_button"
+        android:textColor="@android:color/white"
+        android:text="@string/text_confirm_append"/>
+
+</LinearLayout>

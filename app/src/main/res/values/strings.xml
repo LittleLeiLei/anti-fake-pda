@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">轻松码</string>
+
+    <!-- login -->
+    <string name="hint_login_password">请输入密码</string>
+    <string name="hint_login_account">请输入用户名</string>
+    <string name="text_login">登录</string>
+    <string name="text_other_login_way">其他登录方式</string>
+    <string name="text_login_by_phone">手机号登录</string>
+    <string name="text_login_by_account">账号密码登录</string>
+    <string name="text_obtain_verify_code">获取验证码</string>
+    <string name="hint_login_code">请输入验证码</string>
+    <string name="hint_login_phone">请输入手机号</string>
+
+    <!-- MainActivity -->
+    <string name="nav_tab_home">首页</string>
+    <string name="nav_tab_personal">我的</string>
+    <string name="text_personal">个人中心</string>
+    <string name="text_package">装箱</string>
+    <string name="text_home_deliver">发货</string>
+    <string name="text_home_box_code_manage">箱标管理</string>
+    <string name="text_home_unpack">拆箱</string>
+    <string name="text_home_separate">分离单标</string>
+    <string name="text_home_supply">补标</string>
+    <string name="text_home_query">码查询</string>
+    <string name="text_login_success">登陆成功</string>
+    <string name="text_package_product_name">产品名称</string>
+    <string name="text_package_product_batch">产品批次</string>
+    <string name="text_package_product_scale">装箱规格</string>
+    <string name="text_cell_placeholder">请选择</string>
+    <string name="text_confirm">确定</string>
+    <string name="text_package_itembatch">装箱-产品批次</string>
+    <string name="text_package_product">装箱-选择产品</string>
+    <string name="text_package_scan_code">装箱-扫码</string>
+    <string name="text_package_info">装箱产品信息</string>
+    <string name="text_box_code">箱码</string>
+    <string name="text_item_code">单码</string>
+    <string name="text_package_completion">已完成装箱数</string>
+    <string name="text_reset_operation">重置</string>
+    <string name="text_package_scan_item_code">装箱-扫描单码</string>
+    <string name="text_delete">删除</string>
+    <string name="text_item_code_scan_again">录入失败, 请重新扫描</string>
+    <string name="text_package_successfully">装箱成功</string>
+
+    <string name="toast_select_product_firstly">请先选择产品</string>
+    <string name="toast_select_prodct_and_batch_firstly">请先选择产品和批次</string>
+    <string name="toast_item_code_repeated">该单码重复, 录入失败</string>
+    <string name="toast_box_code_repeated">该箱码重复, 录入失败</string>
+    <string name="toast_item_code_over_count">单码数量达到比例上限, 录入失败</string>
+    <string name="toast_package_failed">装箱失败，箱码或单码未录入</string>
+    <string name="text_deliver_from_warehouse">发货仓库</string>
+    <string name="text_deliver_scan_code">请扫描货物单上的条形码</string>
+    <string name="text_deliver_receiver_info">收货人信息</string>
+    <string name="text_loading_failed">加载失败</string>
+    <string name="text_order_code">订单编号</string>
+    <string name="text_order_state">订单状态</string>
+    <string name="text_deliver_complete">完成发货</string>
+    <string name="text_confirm_unpack">确定拆箱</string>
+    <string name="text_confirm_separate">确定分离单标</string>
+    <string name="text_confirm_append">确定补入单标</string>
+    <string name="text_scan_box_code_first">扫描箱码后继续扫描单码</string>
+    <string name="toast_reset_already">已重置本次操作</string>
+    <string name="text_item_code_to_box_code">单码查询箱码</string>
+    <string name="text_box_code_to_item_code">箱码查询单码</string>
+    <string name="text_logout">退出登录</string>
+    <string name="text_logout_successfully">登出成功</string>
+    <string name="text_code_detail">码详情</string>
+</resources>

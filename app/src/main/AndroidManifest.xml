@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chuxin.wechat.fake">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".app.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <receiver android:name=".scanner.ScannerReceiver">
+            <intent-filter>
+                <action android:name="com.android.service_scanner_appdata" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".views.activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".views.activity.MainActivity" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_HOME"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.PackageActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_PACKAGE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.ProductsActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_PRODUCTS"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.ItemBatchActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_ITEM_BATCHES"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.PackageScanActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_PACKAGE_SCAN"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.ItemCodeActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_PACKAGE_SCAN_ITEM_CODE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.DeliverActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_DELIVER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.WarehousesActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_WAREHOUSE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.UnpackingActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_UNPACK"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.SeparateActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_SEPARATE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.AppendActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_APPEND"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.QueryActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_QUERY"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.QueryItemCodeActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_QUERY_ITEM_CODE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.QueryBoxCodeActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_QUERY_BOX_CODE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.activity.OrderFormatCodeActivity">
+            <intent-filter>
+                <action android:name="app.intent.action.PAGE_ORDER_FORMAT_CODES"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

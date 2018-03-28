@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CellView">
+        <attr name="cellLabel" format="string" />
+        <attr name="cellLabelColor" format="color" />
+        <attr name="cellValue" format="string" />
+        <attr name="cellValueColor" format="color" />
+        <attr name="showArrow" format="boolean" />
+        <attr name="showDivider" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PtrLayout">
+        <attr name="loadingLayout" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+</resources>

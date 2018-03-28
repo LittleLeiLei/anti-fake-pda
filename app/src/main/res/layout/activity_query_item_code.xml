@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_item_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLabel="@string/text_item_code"
+        app:cellValue="请扫描单码"
+        app:showDivider="false" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:visibility="gone"
+        app:cellLabel="以下该单码所属的箱码"
+        app:showDivider="false" />
+
+    <TextView
+        android:id="@+id/tv_empty_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@dimen/padding_middle"
+        android:text="暂未关联箱码"
+        android:textColor="@color/text_color_light"
+        android:visibility="gone" />
+
+    <com.chuxin.wechat.fake.views.ui.CellView
+        android:id="@+id/cv_cell_box_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:cellLabel="@string/text_box_code"
+        app:showDivider="false" />
+
+</LinearLayout>

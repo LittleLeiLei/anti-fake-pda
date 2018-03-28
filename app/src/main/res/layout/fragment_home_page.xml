@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="@dimen/toolbar_title_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 装箱 -->
+        <LinearLayout
+            android:id="@+id/ll_package"
+            style="@style/HomePageGridEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_home_entry_size"
+                android:layout_height="@dimen/icon_home_entry_size"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_package" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_package"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <!-- 发货 -->
+        <LinearLayout
+            android:id="@+id/ll_deliver"
+            style="@style/HomePageGridEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_home_entry_size"
+                android:layout_height="@dimen/icon_home_entry_size"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_deliver" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_home_deliver"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/margin_middle"
+        android:background="@color/divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_middle"
+        android:text="@string/text_home_box_code_manage"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/toolbar_title_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 拆箱 -->
+        <LinearLayout
+            android:id="@+id/ll_unpack"
+            style="@style/HomePageGridEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_home_entry_size"
+                android:layout_height="@dimen/icon_home_entry_size"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_unpack" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_home_unpack"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <!-- 分离单标 -->
+        <LinearLayout
+            android:id="@+id/ll_separate"
+            style="@style/HomePageGridEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_home_entry_size"
+                android:layout_height="@dimen/icon_home_entry_size"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_separate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_home_separate"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <!-- 补标 -->
+        <LinearLayout
+            android:id="@+id/ll_supply"
+            style="@style/HomePageGridEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_home_entry_size"
+                android:layout_height="@dimen/icon_home_entry_size"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_supply" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_home_supply"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 码查询 -->
+        <LinearLayout
+            android:id="@+id/ll_query"
+            style="@style/HomePageGridEntry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="@dimen/icon_home_entry_size"
+                android:layout_height="@dimen/icon_home_entry_size"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_query" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_home_query"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</LinearLayout>

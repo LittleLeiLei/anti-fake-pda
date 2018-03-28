@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_white_background_pressed"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/padding_middle"
+        android:paddingLeft="@dimen/padding_middle"
+        android:paddingRight="@dimen/padding_middle"
+        android:paddingTop="@dimen/padding_middle">
+
+        <TextView
+            android:id="@+id/tv_cell_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_primary" />
+
+        <TextView
+            android:id="@+id/tv_cell_value"
+            style="@style/SingleLineTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="@color/text_color_secondary" />
+
+        <ImageView
+            android:id="@+id/iv_arrow_right"
+            android:layout_width="@dimen/icon_middle"
+            android:layout_height="@dimen/icon_middle"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:src="@mipmap/ic_arrow_right" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/margin_middle"
+        android:layout_marginRight="@dimen/margin_middle"
+        android:background="@color/divider" />
+
+</LinearLayout>
