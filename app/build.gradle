@@ -24,7 +24,7 @@ android {
     buildTypes {
         release {
             // 不显示Log
-            buildConfigField "String", "API_ROOT", API_ROOT as String
+            buildConfigField "String", "API_ROOT", "\"${API_ROOT}/\""
             //启用混淆代码的功能
             minifyEnabled false
             //压缩对齐生成的apk包
@@ -36,7 +36,7 @@ android {
         }
 
         debug {
-            buildConfigField "String", "API_ROOT", API_ROOT as String
+            buildConfigField "String", "API_ROOT", "\"${API_ROOT}/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
