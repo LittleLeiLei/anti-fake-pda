@@ -44,7 +44,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "antifake_v${variant.versionName}_${releaseTime()}.apk"
+            outputFileName = "antifake_pda_v${variant.versionName}_${buildType.name}.apk"
         }
     }
 
@@ -55,10 +55,6 @@ android {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
     }
-}
-
-def releaseTime() {
-    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
 }
 
 dependencies {
