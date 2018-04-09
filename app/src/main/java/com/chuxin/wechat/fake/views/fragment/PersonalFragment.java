@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.chuxin.wechat.fake.R;
 import com.chuxin.wechat.fake.app.MyApp;
+import com.chuxin.wechat.fake.constants.IntentAction;
 import com.chuxin.wechat.fake.views.activity.LoginActivity;
 import com.chuxin.wechat.fake.views.base.BaseFragment;
 import com.google.gson.Gson;
@@ -57,12 +58,9 @@ public class PersonalFragment extends BaseFragment {
         mRoleText.setText(MyApp.get().getManagerWrapper().getManager().getFakeRole().getName());
     }
 
-    @OnClick(R.id.btn_logout)
-    public void logout() {
-        MyApp.get().logout();
-        Intent intent = new Intent(getActivity(), LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+    @OnClick(R.id.btn_setting)
+    public void redirect2Setting() {
+        Intent intent = new Intent(IntentAction.PAGE_SETTING);
         resolveIntent(intent);
-        toast(getString(R.string.text_logout_successfully));
     }
 }

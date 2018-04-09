@@ -7,6 +7,7 @@ import com.chuxin.wechat.fake.api.OrderApi;
 import com.chuxin.wechat.fake.api.ProductApi;
 import com.chuxin.wechat.fake.api.WarehouseApi;
 import com.chuxin.wechat.fake.app.MyApp;
+import com.chuxin.wechat.fake.utils.ACache;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -30,6 +31,7 @@ public class RetrofitWrapper {
     private HashMap<String, Object> mApi = new HashMap<>();
 
     private RetrofitWrapper () {
+
         OkHttpClient mClient = new OkHttpClient.Builder()
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(TIME_OUT, TimeUnit.SECONDS)
@@ -39,7 +41,7 @@ public class RetrofitWrapper {
 
         mRetrofit = new Retrofit.Builder()
                 .client(mClient)
-                .baseUrl(BuildConfig.API_ROOT)
+                .baseUrl(MyApp.get().isApiDebug() ? "http://api.dev.fake.duanzikuaizui.com/api/v0/factory/" : BuildConfig.API_ROOT)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -61,6 +63,10 @@ public class RetrofitWrapper {
 
     public static RetrofitWrapper instance() {
         return RetrofitHolder.INSTANCE;
+    }
+
+    public static void reset() {
+        RetrofitHolder.INSTANCE = new RetrofitWrapper();
     }
 
     public <T> T create (Class<T> clazz) {

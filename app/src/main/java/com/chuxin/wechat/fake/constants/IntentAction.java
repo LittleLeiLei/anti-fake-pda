@@ -21,4 +21,5 @@ public class IntentAction {
     public static final String PAGE_QUERY_ITEM_CODE = "app.intent.action.PAGE_QUERY_ITEM_CODE";
     public static final String PAGE_QUERY_BOX_CODE = "app.intent.action.PAGE_QUERY_BOX_CODE";
     public static final String PAGE_ORDER_FORMAT_CODES = "app.intent.action.PAGE_ORDER_FORMAT_CODES";
+    public static final String PAGE_SETTING = "app.intent.action.PAGE_SETTING";
 }

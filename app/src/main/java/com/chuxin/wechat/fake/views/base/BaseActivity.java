@@ -131,7 +131,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         MyApp.get().toast(content);
     }
 
-    protected boolean resolveIntent (Intent intent) {
+    protected final boolean resolveIntent (Intent intent) {
         boolean flag = true;
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -143,7 +143,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         return flag;
     }
 
-    protected boolean resolveIntent4Result (Intent intent, int requestCode) {
+    protected final boolean resolveIntent4Result (Intent intent, int requestCode) {
         boolean flag = true;
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(intent, requestCode);
@@ -155,14 +155,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         return flag;
     }
 
-    protected void showLoadingDialog() {
+    protected final void showLoadingDialog() {
         if (mLoadingDialog == null) {
             mLoadingDialog = new LoadingDialog(this);
         }
         mLoadingDialog.show();
     }
 
-    protected void hideLoadingDialog() {
+    protected final void hideLoadingDialog() {
         if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
             handler.postDelayed(new Runnable() {
                 @Override

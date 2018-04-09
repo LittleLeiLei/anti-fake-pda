@@ -19,6 +19,9 @@ import com.chuxin.wechat.fake.views.adapter.CodeAdapter;
 import com.chuxin.wechat.fake.views.base.BaseScanActivity;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import butterknife.BindView;
 import butterknife.OnClick;

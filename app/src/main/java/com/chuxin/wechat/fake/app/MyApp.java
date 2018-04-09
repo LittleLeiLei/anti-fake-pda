@@ -53,6 +53,17 @@ public class MyApp extends Application {
         ACache.get(this).put(Constant.Key.KEY_CACHE_USER, "");
     }
 
+    public boolean isApiDebug() {
+        int isApiDebug = 0;
+        try {
+            String debugStr = ACache.get(this).getAsString("IS_DEBUG");
+            isApiDebug = debugStr != null ? Integer.parseInt(debugStr) : 0;
+        } catch (Exception e) {
+            isApiDebug = 0;
+        }
+        return isApiDebug == 1;
+    }
+
     public boolean isDebug() {
         return BuildConfig.DEBUG;
     }
