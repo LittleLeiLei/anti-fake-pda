@@ -16,6 +16,7 @@ public class Order {
     private String id = "";
     private String code = "";
     private String remark = "";
+    private String note = "";
     private int orderState = 0;
     private int price = 0;
     private Address address = null;
@@ -45,6 +46,14 @@ public class Order {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public int getOrderState() {
@@ -84,7 +93,7 @@ public class Order {
     }
 
     public void setFormats(List<Format> formats) {
-        this.formats = formats;
+        this.formats = compact(formats);
     }
 
     public List<StockDetail> getStockDetails() {
@@ -106,4 +115,19 @@ public class Order {
     public String getOrderStateName() {
         return getOrderState() == STATE_DELIVERED ? "已发货" : getOrderState() == STATE_OBSOLETE ? "已作废" : "未发货";
     }
+
+    public static List<Format> compact(List<Format> formats) {
+        List<Format> compactFormats = new ArrayList<>();
+        for (Format format : formats) {
+            int index = compactFormats.indexOf(format);
+            if (index < 0) {
+                compactFormats.add(format);
+            } else {
+                Format existedFormat = compactFormats.get(index);
+                existedFormat.setCount(existedFormat.getCount() + format.getCount());
+            }
+        }
+        return compactFormats;
+    }
+
 }

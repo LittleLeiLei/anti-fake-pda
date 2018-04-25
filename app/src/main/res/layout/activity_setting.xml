@@ -11,7 +11,8 @@
         android:orientation="horizontal"
         android:background="@android:color/white"
         android:padding="@dimen/padding_middle"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="0dp"

@@ -242,7 +242,7 @@ public class DeliverActivity extends BaseScanActivity {
             mOrderCode.setValue(order.getCode());
             mOrderStateCell.setValue(mOrder.getOrderStateName());
             mOrderStateCell.setValueColor(mOrder.isDelivered() ? getResources().getColor(R.color.color_success) : getResources().getColor(R.color.color_failed));
-            mRemarkText.setValue(TextUtils.isEmpty(order.getRemark()) ? "无" : order.getRemark());
+            mRemarkText.setValue(TextUtils.isEmpty(order.getNote()) ? "无" : order.getNote());
             mReceiverNameText.setText(String.format("收件人 ： %s", order.getAddress().getName()));
             mReceiverPhoneText.setText(order.getAddress().getPhone());
             mFullAddressText.setText(order.getAddress().getFullAddress());
@@ -399,6 +399,12 @@ public class DeliverActivity extends BaseScanActivity {
                     codes.add(code);
                 }
                 mCodeMap.put(record.getFormatId(), codes);
+//                List<Code> existedFormatCodes = mCodeMap.get(record.getFormatId());
+//                if (existedFormatCodes != null) {
+//                    existedFormatCodes.addAll(codes);
+//                } else {
+//                    mCodeMap.put(record.getFormatId(), codes);
+//                }
             }
         }
     }
