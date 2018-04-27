@@ -10,11 +10,11 @@ import java.util.List;
 
 public class StockRecord {
 
-    private CodeDetail codes;
+    private CodeDetail codes = new CodeDetail();
 
-    private String id;
-    private String formatId;
-    private int count;
+    private String id = "";
+    private String formatId = "";
+    private int count = 0;
 
     public CodeDetail getCodes() {
         return codes;
