@@ -107,6 +107,22 @@
                     android:overScrollMode="never" />
 
                 <com.chuxin.wechat.fake.views.ui.CellView
+                    android:id="@+id/cv_cell_out_products_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_middle"
+                    android:visibility="gone"
+                    app:cellLabel="已出库商品"
+                    app:showDivider="true" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_order_out_products"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:visibility="gone" />
+
+                <com.chuxin.wechat.fake.views.ui.CellView
                     android:id="@+id/tv_remark"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,25 +134,25 @@
                     style="@style/PrimaryButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_large"
                     android:layout_marginLeft="@dimen/margin_huge"
                     android:layout_marginRight="@dimen/margin_huge"
                     android:layout_marginTop="@dimen/margin_large"
-                    android:layout_marginBottom="@dimen/margin_large"
                     android:text="@string/text_deliver_complete" />
 
             </LinearLayout>
 
 
             <!--<Button-->
-                <!--android:id="@+id/btn_deliver"-->
-                <!--style="@style/PrimaryButton"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="@dimen/margin_huge"-->
-                <!--android:layout_marginRight="@dimen/margin_huge"-->
-                <!--android:layout_marginTop="@dimen/margin_large"-->
-                <!--android:layout_marginBottom="@dimen/margin_large"-->
-                <!--android:text="@string/text_deliver_complete" />-->
+            <!--android:id="@+id/btn_deliver"-->
+            <!--style="@style/PrimaryButton"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/margin_huge"-->
+            <!--android:layout_marginRight="@dimen/margin_huge"-->
+            <!--android:layout_marginTop="@dimen/margin_large"-->
+            <!--android:layout_marginBottom="@dimen/margin_large"-->
+            <!--android:text="@string/text_deliver_complete" />-->
 
 
         </LinearLayout>

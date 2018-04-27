@@ -9,13 +9,16 @@ import android.text.TextUtils;
  * Created by chao on 2018/3/13.
  */
 
-public class Format implements Parcelable {
+public class Format implements Parcelable, Cloneable {
     private String id = "";
     private String name = "";
     private String code = "";
     private Product product = null;
     private int price = 0;
     private int count = 0;
+    private int outCount = 0;
+
+    // 表示订单发货时已扫码的商品数量
     private int packageCount = 0;
 
     protected Format(Parcel in) {
@@ -96,12 +99,21 @@ public class Format implements Parcelable {
         this.price = price;
     }
 
+    // 已转换成最小单位数量
     public int getCount() {
         return count;
     }
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public int getOutCount() {
+        return outCount;
+    }
+
+    public void setOutCount(int outCount) {
+        this.outCount = outCount;
     }
 
     public int getPackageCount() {
@@ -128,5 +140,16 @@ public class Format implements Parcelable {
             }
         }
         return false;
+    }
+
+    @Override
+    protected Format clone() {
+        Format f = null;
+        try {
+            f = (Format)super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return f;
     }
 }

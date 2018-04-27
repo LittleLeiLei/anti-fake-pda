@@ -45,11 +45,15 @@ public class OrderApiWrapper {
                     cloneProduct.setMinUnit(product.getMinUnit());
                     cloneProduct.setSoldUnit(product.getSoldUnit());
                     for (Format format : product.getFormats()) {
+                        format.setCount(format.getCount() * cloneProduct.getSoldUnit().getNumber());
+                        // 若订单为已发货状态，则设置packageCount为count的值
+                        format.setPackageCount(res.getData().isDelivered() ? format.getCount() : 0);
                         format.setProduct(cloneProduct);
                         formats.add(format);
                     }
                 }
-                res.getData().setFormats(formats);
+                // 将相同规格商品进行合并
+                res.getData().setFormats(Order.compact(formats));
                 return res;
             }
         }).subscribe(observer);

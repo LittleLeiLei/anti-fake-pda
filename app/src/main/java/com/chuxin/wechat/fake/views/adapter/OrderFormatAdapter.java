@@ -2,6 +2,8 @@ package com.chuxin.wechat.fake.views.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chuxin.wechat.fake.R;
 import com.chuxin.wechat.fake.entity.Format;
@@ -19,7 +21,7 @@ import butterknife.ButterKnife;
 
 public class OrderFormatAdapter extends BaseRecyclerAdapter<Format, OrderFormatAdapter.ViewHolder> {
 
-    private boolean isDelivered = false;
+    private boolean enabled = true;
 
     @Override
     protected int getItemLayoutId() {
@@ -33,19 +35,15 @@ public class OrderFormatAdapter extends BaseRecyclerAdapter<Format, OrderFormatA
 
     @Override
     protected void onBindHolder(ViewHolder holder, Format data, int pos) {
-        holder.mProductCell.setLabel(CommonUtils.wrapOverText(data.getFullName(), 15));
+        holder.mFormatName.setText(CommonUtils.wrapOverText(data.getFullName(), 20));
 
-        int totalCount = soldUnit2MinUnit(data.getProduct().getSoldUnit(), data.getCount());
-        holder.mProductCell.setValue(String.format("%s / %s %s", isDelivered ? totalCount : data.getPackageCount(), totalCount, data.getProduct().getMinUnit()));
-        holder.mProductCell.showDivider(pos != getData().size() - 1);
+        holder.mFormatCount.setText(String.format("%s / %s %s", data.getPackageCount(), data.getCount(), data.getProduct().getMinUnit()));
+        holder.divider.setVisibility(pos != getData().size() - 1 ? View.VISIBLE : View.INVISIBLE);
+        holder.mArrowImg.setVisibility(enabled ? View.VISIBLE : View.GONE);
     }
 
-    private int soldUnit2MinUnit(Unit soldUnit, int count) {
-        return count * soldUnit.getNumber();
-    }
-
-    public void setDelivered (boolean isDelivered) {
-        this.isDelivered = isDelivered;
+    public void setEnabled (boolean enabled) {
+        this.enabled = enabled;
     }
 
     public void reset() {
@@ -57,8 +55,20 @@ public class OrderFormatAdapter extends BaseRecyclerAdapter<Format, OrderFormatA
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.cv_cell_product)
-        CellView mProductCell;
+        // @BindView(R.id.cv_cell_product)
+        // CellView mProductCell;
+
+        @BindView(R.id.tv_format_name)
+        TextView mFormatName;
+
+        @BindView(R.id.tv_format_count)
+        TextView mFormatCount;
+
+        @BindView(R.id.iv_arrow_right)
+        ImageView mArrowImg;
+
+        @BindView(R.id.divider)
+        View divider;
 
         public ViewHolder(View itemView) {
             super(itemView);

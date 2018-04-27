@@ -70,6 +70,12 @@ public class DeliverActivity extends BaseScanActivity {
     @BindView(R.id.rv_order_products)
     RecyclerView mFormatsView;
 
+    @BindView(R.id.rv_order_out_products)
+    RecyclerView mOutFormatsView;
+
+    @BindView(R.id.cv_cell_out_products_label)
+    CellView mOutProductsCell;
+
     @BindView(R.id.cv_cell_hint_scan_code)
     CellView mHintCell;
 
@@ -249,10 +255,22 @@ public class DeliverActivity extends BaseScanActivity {
 
             resolveOrderCodes(order);
             mAdapter = new OrderFormatAdapter();
-            mAdapter.setDelivered(mOrder.isDelivered());
-            mAdapter.setData(order.getFormats());
+            // 只有未发货订单才区分显示已出库和未出库的商品
+            mAdapter.setData(order.isUndelivered() ? order.getExcludeOutCountFormats() : order.getFormats());
             mFormatsView.setLayoutManager(new LinearLayoutManager(this));
             mFormatsView.setAdapter(mAdapter);
+
+            // 只有未发货订单才区分显示已出库和未出库的商品
+            if (order.isUndelivered()) {
+                List<Format> outFormats = order.getOutFormats();
+                mOutFormatsView.setVisibility(outFormats.size() > 0 ? View.VISIBLE :View.GONE);
+                mOutProductsCell.setVisibility(outFormats.size() > 0 ? View.VISIBLE :View.GONE);
+                OrderFormatAdapter outFormatAdapter = new OrderFormatAdapter();
+                outFormatAdapter.setEnabled(false);
+                outFormatAdapter.setData(outFormats);
+                mOutFormatsView.setLayoutManager(new LinearLayoutManager(this));
+                mOutFormatsView.setAdapter(outFormatAdapter);
+            }
 
             mAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener<Format>() {
                 @Override
@@ -347,7 +365,7 @@ public class DeliverActivity extends BaseScanActivity {
         if (index > -1) {
 
             Format orderFormat = mOrder.getFormats().get(index);
-            if (orderFormat.getPackageCount() + data.getLinkedCount() > orderFormat.getMinUnitCount()) {
+            if (orderFormat.getPackageCount() + data.getLinkedCount() > orderFormat.getCount()) {
                 toast(String.format("超过订单内 %s 的数量上限", orderFormat.getFullName()));
                 SoundWrapper.get().playAlert();
             } else {
@@ -399,12 +417,6 @@ public class DeliverActivity extends BaseScanActivity {
                     codes.add(code);
                 }
                 mCodeMap.put(record.getFormatId(), codes);
-//                List<Code> existedFormatCodes = mCodeMap.get(record.getFormatId());
-//                if (existedFormatCodes != null) {
-//                    existedFormatCodes.addAll(codes);
-//                } else {
-//                    mCodeMap.put(record.getFormatId(), codes);
-//                }
             }
         }
     }
@@ -432,7 +444,7 @@ public class DeliverActivity extends BaseScanActivity {
 
     private boolean checkOrderFormat(List<Format> formats) {
         for (Format format : formats) {
-            if (format.getPackageCount() < format.getMinUnitCount()) {
+            if (format.getPackageCount() < format.getCount()) {
                 toast(String.format("%s 数量未达到订单要求", format.getFullName()));
                 return false;
             }

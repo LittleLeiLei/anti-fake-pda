@@ -18,6 +18,7 @@ public class Product implements Parcelable {
     private String code = "";
     private String minUnit = "";
     private Unit soldUnit = null;
+    private boolean antiFake = true;
     private List<Format> formats = new ArrayList<>();
 
     public Product() {}
@@ -94,6 +95,14 @@ public class Product implements Parcelable {
 
     public void setSoldUnit(Unit soldUnit) {
         this.soldUnit = soldUnit;
+    }
+
+    public boolean isAntiFake() {
+        return antiFake;
+    }
+
+    public void setAntiFake(boolean antiFake) {
+        this.antiFake = antiFake;
     }
 
     public List<Format> getFormats() {
