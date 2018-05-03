@@ -39,7 +39,7 @@ public class OrderFormatAdapter extends BaseRecyclerAdapter<Format, OrderFormatA
 
         holder.mFormatCount.setText(String.format("%s / %s %s", data.getPackageCount(), data.getCount(), data.getProduct().getMinUnit()));
         holder.divider.setVisibility(pos != getData().size() - 1 ? View.VISIBLE : View.INVISIBLE);
-        holder.mArrowImg.setVisibility(enabled ? View.VISIBLE : View.GONE);
+        holder.mArrowImg.setVisibility(data.getProduct().isAntiFake() && enabled ? View.VISIBLE : View.GONE);
     }
 
     public void setEnabled (boolean enabled) {

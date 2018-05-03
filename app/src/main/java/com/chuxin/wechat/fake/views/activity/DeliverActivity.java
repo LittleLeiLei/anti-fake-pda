@@ -276,7 +276,8 @@ public class DeliverActivity extends BaseScanActivity {
                 @Override
                 public void onItemClick(View view, Format data, int pos) {
 
-                    if (mOrder.getOrderState() == Order.STATE_OBSOLETE) return;
+                    // 已作废订单或非防伪商品禁止跳转
+                    if (mOrder.getOrderState() == Order.STATE_OBSOLETE || !data.getProduct().isAntiFake()) return;
 
                     Intent intent = new Intent(IntentAction.PAGE_ORDER_FORMAT_CODES);
                     ArrayList<Code> codes = (ArrayList<Code>) mCodeMap.get(data.getId());
